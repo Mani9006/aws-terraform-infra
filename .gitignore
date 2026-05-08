@@ -1,0 +1,67 @@
+# ---------------------------------------------------------------------------
+# Git Ignore
+# ---------------------------------------------------------------------------
+
+# Terraform
+**/.terraform/
+**/.terraform.lock.hcl
+**/*.tfstate
+**/*.tfstate.*.backup
+**/*.tfstate.backup
+**/*.tfplan
+**/*.tfplan.*
+**/tfplan-*
+**/.terraform.tfstate.lock.info
+**/crash.log
+**/crash.*.log
+**/*.tfvars.json
+**/*.tfvars.secret
+
+# Local override files
+**/override.tf
+**/override.tf.json
+**/*_override.tf
+**/*_override.tf.json
+
+# Sensitive data
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+**/*.env
+**/.env.*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Outputs
+**/outputs-*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.bak
+*.backup

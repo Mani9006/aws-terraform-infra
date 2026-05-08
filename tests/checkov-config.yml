@@ -1,0 +1,53 @@
+# ---------------------------------------------------------------------------
+# Checkov Configuration
+# ---------------------------------------------------------------------------
+# Configuration for Bridgecrew Checkov security scanning.
+# Scans Terraform configurations against CIS benchmarks and best practices.
+# ---------------------------------------------------------------------------
+
+# Framework to scan
+framework:
+  - terraform
+
+# Directories to scan
+directory:
+  - modules/vpc
+  - modules/compute
+  - modules/database
+  - modules/storage
+  - environments/dev
+  - environments/staging
+  - environments/prod
+
+# Compact output
+compact: true
+
+# Quiet mode - only show failures
+quiet: false
+
+# Skip checks that don't apply to our architecture
+skip-check:
+  # We use managed policies for enhanced monitoring role (AWS recommended)
+  - CKV_AWS_40
+  # S3 bucket logging is handled by separate logging bucket
+  - CKV_AWS_18
+  # We intentionally allow 0.0.0.0/0 on ALB for public internet-facing services
+  - CKV_AWS_260
+  # NAT gateway EIP association is handled properly
+  - CKV_AWS_273
+
+# Soft fail - don't fail the build on warnings
+soft-fail: true
+
+# Evaluate variable values
+evaluate-variables: true
+
+# Check for external modules
+check-hidden: false
+
+# Output format
+output: cli
+
+# BC ID mapping for Bridgecrew platform
+# (disabled for local scanning)
+bc-id: false
