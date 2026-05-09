@@ -704,3 +704,41 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 ---
 
 > **Disclaimer**: This project creates real AWS resources that incur costs. Always review the plan before applying and destroy resources when not needed. Use `terraform plan` to preview changes and costs.
+
+---
+
+<!-- showcase:start -->
+
+## Architecture
+
+```mermaid
+flowchart LR
+    R53[Route 53] --> ALB[Application LB]
+    ALB --> ASG[Auto Scaling Group<br/>EC2]
+    ASG --> RDS[(RDS Postgres)]
+    ASG --> S3[(S3 Bucket)]
+    subgraph VPC[VPC: dev / staging / prod]
+        ALB
+        ASG
+        RDS
+    end
+```
+
+## Test Results
+
+![Test results](docs/test_results.png)
+
+_This project is configuration-focused (Terraform / Kubernetes manifests / Docker Compose / PWA). Validation runs via the project's native tooling rather than a unit-test suite._
+
+## References & Further Reading
+
+- Brikman, Y. (2022). *Terraform: Up & Running* (3rd ed.). O'Reilly.
+- AWS Well-Architected Framework. Amazon Web Services. [↗](https://aws.amazon.com/architecture/well-architected/)
+
+## Author
+
+**Manikanta Reddy Mandadhi** — Senior Data Scientist (RAG / Agentic AI)
+
+GitHub: [@Mani9006](https://github.com/Mani9006/aws-terraform-infra) · LinkedIn: [reddy1999](https://www.linkedin.com/in/reddy1999) · Portfolio: [manikantabio.com](https://www.manikantabio.com)
+
+<!-- showcase:end -->

@@ -1,0 +1,10 @@
+flowchart LR
+    R53[Route 53] --> ALB[Application LB]
+    ALB --> ASG[Auto Scaling Group<br/>EC2]
+    ASG --> RDS[(RDS Postgres)]
+    ASG --> S3[(S3 Bucket)]
+    subgraph VPC[VPC: dev / staging / prod]
+        ALB
+        ASG
+        RDS
+    end
