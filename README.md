@@ -709,6 +709,20 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 
 <!-- showcase:start -->
 
+## Research Report
+
+**Modular Infrastructure-as-Code for AWS Multi-Account Environments**
+
+_A study of Terraform module composition, drift detection, and least-privilege IAM policy generation_
+
+A self-contained research-grade report (Abstract, Introduction, Research Problem, Research Questions, Literature Review, Research Method, Data Description, Analysis, Discussion, Conclusion, Future Work, References) is published with this repository.
+
+[Read the full report (PDF)](docs/research_report.pdf)
+
+**Keywords:** infrastructure as code, Terraform, drift detection, IAM, AWS Well-Architected
+
+![Research metrics](docs/research_metrics.png)
+
 ## Architecture
 
 ```mermaid
